@@ -2,26 +2,26 @@ import { useEffect, useRef, useState } from 'react'
 import { skills } from '../data.js'
 import { useReveal } from '../hooks/useReveal.js'
 
+const coreTools = ['FastAPI', 'FastGPT', 'LangChain', 'RAGFlow', 'n8n', 'Docker']
+const deliverySteps = ['Scope', 'Build', 'Evaluate', 'Deploy']
+
 export default function Skills() {
   const headRef = useReveal()
   const sectionRef = useRef(null)
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsActive(true)
-          observer.unobserve(entry.target)
+          observer.disconnect()
         }
       },
-      { rootMargin: '0px 0px -24% 0px', threshold: 0.28 },
+      { threshold: 0 },
     )
 
-    observer.observe(section)
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
@@ -34,46 +34,102 @@ export default function Skills() {
       <div className="container">
         <div className="section__head reveal" ref={headRef}>
           <span className="section__index">03</span>
-          <h2 className="section__title">Skills</h2>
+          <h2 className="section__title"><span className="text-gradient">Skills</span></h2>
           <span className="section__en">TECH&nbsp;STACK</span>
         </div>
 
         <div className="skills__shell">
           <div className="skills__intro">
-            <span className="skills__eyebrow">ENGINEERING RANGE</span>
+            <span className="skills__eyebrow">AI ENGINEERING &amp; DELIVERY</span>
             <p>
-              Practical capabilities across AI engineering, agent workflows and
-              immersive Unity / VR production.
+              Practical capabilities in AI agents, retrieval systems, workflow
+              automation, API integration, evaluation, and deployment.
             </p>
+
+            <div className="skills__details">
+              <div className="skills__detail-block">
+                <h3 className="skills__detail-title" id="skills-tools-title">
+                  Core tools
+                </h3>
+                <ul className="skills__tools" aria-labelledby="skills-tools-title">
+                  {coreTools.map((tool) => (
+                    <li className="skills__tool" key={tool}>
+                      {tool}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="skills__detail-block">
+                <h3 className="skills__detail-title" id="skills-delivery-title">
+                  How I deliver
+                </h3>
+                <ol
+                  className="skills__delivery"
+                  aria-labelledby="skills-delivery-title"
+                >
+                  {deliverySteps.map((step) => (
+                    <li className="skills__delivery-step" key={step}>
+                      <span className="skills__delivery-node" aria-hidden="true" />
+                      <span className="skills__delivery-label">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            <a className="skills__work-link" href="#projects">
+              <span>Explore related work</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7M7 7h10v10" />
+              </svg>
+            </a>
           </div>
 
-          <div className="skills__list" aria-label="Technical skills">
+          <ul className="skills__list" aria-label="AI engineering and delivery capabilities">
             {skills.map((skill, index) => (
-              <div
+              <li
                 className="skill-row"
                 key={skill.name}
                 style={{
-                  '--skill-value': `${skill.value}%`,
+                  '--skill-scale': skill.value === null ? 0 : skill.value / 100,
                   '--skill-delay': `${index * 90}ms`,
                 }}
               >
                 <div className="skill-row__meta">
-                  <span className="skill-row__name">{skill.name}</span>
-                  <span className="skill-row__value">{skill.value}%</span>
+                  <h3 className="skill-row__name">
+                    <span className="text-gradient">{skill.name}</span>
+                  </h3>
+                  <span className="skill-row__value">
+                    <span className="text-gradient">
+                      {skill.value === null ? '—' : `${skill.value}%`}
+                    </span>
+                  </span>
                 </div>
                 <div
                   className="skill-row__track"
                   role="progressbar"
                   aria-label={skill.name}
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-valuenow={isActive ? skill.value : 0}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={skill.value === null ? undefined : skill.value}
+                  aria-valuetext={skill.value === null ? 'Not rated' : `${skill.value}%`}
                 >
                   <span className="skill-row__bar" />
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

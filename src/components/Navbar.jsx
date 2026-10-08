@@ -15,7 +15,9 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a href="#home" className="navbar__logo">
-          JAQEN<span className="navbar__logo-dot">.</span>HU
+          <span className="text-gradient">
+            JAQEN<span className="navbar__logo-dot">.</span>HU
+          </span>
         </a>
         <nav className="navbar__links">
           {navLinks.map((link) => (

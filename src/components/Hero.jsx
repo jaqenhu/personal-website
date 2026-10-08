@@ -4,9 +4,8 @@ import HeroBackground from './HeroBackground.jsx'
 
 const roles = [
   'AI Engineer',
-  'Agent developer',
-  'VR Designer',
-  'Simulation Engineer',
+  'Agent Developer',
+  'RAG & Enterprise Solution Builder',
 ]
 
 export default function Hero() {
@@ -60,9 +59,11 @@ export default function Hero() {
             <span className="hero__kicker-line" />
             {profile.handle} - {profile.location}
           </p>
-          <h1 className="hero__title">Hello, I'm Jaqen HU</h1>
+          <h1 className="hero__title">
+            <span className="text-gradient">Hello, I'm Jaqen HU</span>
+          </h1>
           <p className="hero__role-line">
-            <span className="hero__role-prefix">A </span>
+            <span className="hero__role-prefix text-gradient">A </span>
             <span className="hero__typed-role" aria-live="polite">
               {typedRole}
             </span>
@@ -71,18 +72,15 @@ export default function Hero() {
             </span>
           </p>
           <p className="hero__subtitle">
-            Engaged in AI, LLM and VR technology integration and
-            implementation.
-            <br />
-            Develop agents and digital twins, research immersive interaction
-            solutions.
+            Building AI agents and retrieval systems for enterprise workflows,
+            combining system integration, evaluation, and practical deployment.
           </p>
           <div className="hero__actions">
             <a href="#projects" className="btn btn--solid">
               View Work
             </a>
             <a href="#contact" className="btn btn--outline">
-              Get in Touch
+              <span className="text-gradient">Get in Touch</span>
             </a>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function About() {
       <div className="container reveal" ref={ref}>
         <div className="section__head">
           <span className="section__index">01</span>
-          <h2 className="section__title">About</h2>
+          <h2 className="section__title"><span className="text-gradient">About</span></h2>
           <span className="section__en">WHO&nbsp;I&nbsp;AM</span>
         </div>
 
@@ -31,18 +31,20 @@ export default function About() {
 
           <div className="about__body">
             <h3 className="about__lead">
-              <span className="about__highlight">Hi, I'm Jaqen Hu.</span>
+              <span className="about__highlight text-gradient">Hi, I'm Jaqen Hu.</span>
             </h3>
             <p className="about__para">
-              My work centers around AI and VR, with a focus on bringing
-              cutting-edge technologies to life. Right now I'm building AI
-              Agents and digital twin scenes.
+              I’m an AI engineer focused on agents, retrieval systems, and
+              workflow automation. My projects include privately deployed AI
+              workflows, enterprise knowledge retrieval, and digital-twin
+              training applications.
             </p>
             <p className="about__para">
-              I truly believe great tech products blend in-depth research and
-              hands-on engineering. I'd love to connect for open-source
-              collaboration, project work or tech talks, and build things
-              alongside like-minded people.
+              I focus on connecting models with tools and data, evaluating
+              system behavior, and building practical applications around real
+              workflows. I’m interested in forward-deployed AI engineering roles
+              where I can develop these capabilities through close collaboration
+              with users and engineering teams.
             </p>
 
             <ul className="about__meta">
@@ -71,7 +73,7 @@ export default function About() {
             <div className="about__stats">
               {stats.map((item) => (
                 <div key={item.label} className="about__stat">
-                  <span className="about__stat-value">{item.value}</span>
+                  <span className="about__stat-value"><span className="text-gradient">{item.value}</span></span>
                   <span className="about__stat-label">{item.label}</span>
                 </div>
               ))}

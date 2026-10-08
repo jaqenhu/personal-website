@@ -73,7 +73,7 @@ export default function Contact() {
       <div className="container contact__inner reveal" ref={ref}>
         <div className="contact__main">
           <div className="contact__intro">
-            <span className="contact__kicker">04 — GET IN TOUCH</span>
+            <span className="contact__kicker">05 — GET IN TOUCH</span>
             <h2 className="contact__title">
               Got an idea?
               <br />
@@ -82,12 +82,18 @@ export default function Contact() {
               </a>
             </h2>
             <p className="contact__note">
-              Technical exchange · project collaboration · open-source
-              co-creation — always happy to hear from you.
+              Technical exchange · project collaboration ·{' '}
+              <span className="contact__note-phrase">open-source co-creation</span>
+              {' '}— always happy to hear from you.
             </p>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            <p className="contact-form__greeting">hello</p>
             <div className="contact-form__fields">
               <div className="contact-form__field">
                 <input
@@ -155,9 +161,7 @@ export default function Contact() {
                 className="contact-form__submit"
                 disabled={status === 'sending'}
               >
-                <span className="contact-form__submit-dot" aria-hidden="true" />
-                <span>{status === 'sending' ? 'SENDING' : 'SEND'}</span>
-                <span aria-hidden="true">→</span>
+                {status === 'sending' ? 'Submitting…' : 'Submit'}
               </button>
               <p
                 className={`contact-form__status contact-form__status--${status}`}

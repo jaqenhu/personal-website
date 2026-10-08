@@ -19,7 +19,7 @@ function ProjectCard({ project, onOpen }) {
       <div className="project-card__body">
         <h3 className="project-card__title">
           <button type="button" onClick={() => onOpen(project)}>
-            {project.title}
+            <span className="text-gradient">{project.title}</span>
           </button>
         </h3>
 
@@ -82,7 +82,7 @@ function ProjectModal({ project, onClose }) {
         <div className="project-modal__content">
           <span className="project-card__category">{project.category}</span>
           <h3 id={`project-modal-title-${project.id}`} className="project-modal__title">
-            {project.title}
+            <span className="text-gradient">{project.title}</span>
           </h3>
           <p className="project-modal__desc">{project.description}</p>
 
@@ -121,7 +121,7 @@ export default function Projects() {
       <div className="container">
         <div className="section__head reveal" ref={ref}>
           <span className="section__index">02</span>
-          <h2 className="section__title">Selected Work</h2>
+          <h2 className="section__title"><span className="text-gradient">Selected Work</span></h2>
           <span className="section__en">SELECTED&nbsp;WORKS</span>
         </div>
 
