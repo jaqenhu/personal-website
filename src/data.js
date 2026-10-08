@@ -28,11 +28,11 @@ export const projects = [
     title: 'Enterprise AI Agent & Workflow Automation',
     category: 'AI Agent / Workflow',
     description:
-      'A privately deployed AI automation platform built with FastGPT and n8n for customer inquiries, ticket summarization, document processing, and report generation.',
+      'A privately deployed AI platform that automates customer inquiries, ticket summarization, document processing, and reporting through agents and API integrations.',
     features:
-      'Agent configuration, knowledge retrieval, API-triggered workflows, human approval, error retries, and execution logs.',
+      'Knowledge retrieval, API-triggered workflows, human approval, automated retries, and execution logs.',
     results:
-      'Built 6 workflows with 15+ integrations. Achieved a 92% success rate across 200 test runs and reduced average processing time from 15 to 3 minutes.',
+      'Built 6 workflows with 15+ integrations. Achieved 92% success across 200 test runs and reduced average processing time from 15 to 3 minutes.',
     image: '/project-ai-agent-workflow.png',
     tags: ['FastGPT', 'n8n', 'LLM API', 'FastAPI', 'Docker'],
   },
@@ -42,38 +42,71 @@ export const projects = [
     title: 'Enterprise RAG Knowledge Base',
     category: 'RAG / Knowledge Base',
     description:
-      'A RAGFlow-based knowledge system that transforms policies, product materials, and operation manuals into searchable, traceable answers.',
+      'A RAGFlow-based system that transforms enterprise documents into searchable, source-linked answers.',
     features:
-      'Multi-format document parsing, configurable chunking, semantic retrieval, reranking, and source citation.',
+      'Document parsing, configurable chunking, semantic retrieval, reranking, and source citations.',
     results:
-      'Processed 300+ documents into 20,000+ chunks. Reached 84% Top-3 retrieval accuracy and 88% valid-answer accuracy on a 100-question test set.',
+      'Processed 300+ documents into 20,000+ chunks. Achieved 84% Top-3 retrieval accuracy and 88% valid-answer accuracy on a 100-question test set.',
     image: '/project-rag-knowledge-base.png',
     tags: ['RAGFlow', 'Embedding', 'Reranker', 'LLM API', 'Docker'],
   },
   {
     id: 'vr',
     index: '03',
-    title: 'NPP VR Interaction System',
-    category: 'Digital Twin / VR',
+    title: 'NPP Digital Twin & VR Training System',
+    category: 'Digital Twin / VR Training',
     description:
-      'A digital-twin training environment that recreates key nuclear power plant (NPP) areas at full scale for safe and repeatable VR practice.',
+      'A full-scale digital twin of key nuclear power plant areas for safe, repeatable VR training.',
     features:
-      'Equipment interaction, guided procedures, inspection training, emergency simulation, and performance tracking.',
+      'Equipment interaction, guided procedures, inspection exercises, emergency simulations, and performance tracking.',
     results:
-      'Delivered 10 training scenarios across 3 operational areas with 60+ interactive equipment points, reducing training costs by 40% and training time by 35%.',
+      'Delivered 10 scenarios across 3 plant areas with 60+ interactive equipment points. Reduced training costs by 40% and training time by 35%.',
     image: '/project-npp-vr-digital-twin.png',
     tags: ['Unreal Engine 5', 'BIM', 'Plant Simulation', 'OpenXR', 'C++'],
   },
 ]
 
 export const skills = [
-  { name: 'Python', value: 90 },
-  { name: 'Langchain', value: 85 },
-  { name: 'Workflow', value: 95 },
-  { name: 'LLM-API', value: 85 },
-  { name: 'Prompt engineering', value: 80 },
-  { name: 'VR', value: 85 },
-  { name: 'Unity 3D', value: 80 },
+  {
+    name: 'Python & API Development',
+    value: 90,
+    description: 'Python, FastAPI, API development, and business logic implementation.',
+  },
+  {
+    name: 'AI Agent Development',
+    value: 95,
+    description: 'Agent development, tool integration, and task execution with FastGPT and LangChain.',
+  },
+  {
+    name: 'RAG & Knowledge Retrieval',
+    value: 95,
+    description: 'Document parsing, chunking, embeddings, semantic retrieval, reranking, and source citations.',
+  },
+  {
+    name: 'Workflow Automation',
+    value: 95,
+    description: 'n8n workflows, API triggers, human approval, and multi-step business process orchestration.',
+  },
+  {
+    name: 'LLM Integration & Prompt Engineering',
+    value: 95,
+    description: 'Model API integration, prompt design, and connecting models with business applications.',
+  },
+  {
+    name: 'Evaluation & Reliability',
+    value: 90,
+    description: 'Test-set evaluation, retrieval and answer quality assessment, failure analysis, automated retries, and execution logs.',
+  },
+  {
+    name: 'Deployment & System Integration',
+    value: 85,
+    description: 'Docker-based private deployment and integration of models, tools, data, and business systems.',
+  },
+  {
+    name: 'Solution Discovery & Delivery',
+    value: 85,
+    description: 'Requirements discovery, technical scoping, solution design, and user handoff.',
+  },
 ]
 
 export const navLinks = [
@@ -81,5 +114,6 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#projects' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ]
